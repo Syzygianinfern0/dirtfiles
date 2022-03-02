@@ -1,5 +1,4 @@
 #!/bin/bash
-# set -eufo pipefail
 
 # Part 1: Get the oh my zsh things working
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -10,11 +9,14 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 
 # Part 2: Get the dotfiles in place
+mkdir -p .dotfiles-backup
+if [ -f .dotfiles ]; then
+   mv .dotfiles .dotfiles-backup
+fi
 git clone --bare https://github.com/Syzygianinfern0/dotfiles.git $HOME/.dotfiles
 function config {
   /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
 }
-mkdir -p .dotfiles-backup
 config checkout
 if [ $? = 0 ]; then
   echo "Checked out config.";
