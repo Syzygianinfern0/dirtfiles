@@ -2,10 +2,10 @@
 set -e
 
 # Part 0: Back up oh my zsh stuff so it doesn't complain
-mkdir -p "$HOME/.dotfiles-backup"
-if [ -d "$HOME/.oh-my-zsh" ]; then
+mkdir -p "$HOME"/.dotfiles-backup
+if [ -d "$HOME"/.oh-my-zsh ]; then
     echo "Backing up existing oh my zsh folder."
-    mv --backup=numbered "$HOME/.oh-my-zsh"/ "$HOME/.dotfiles-backup/"
+    mv --backup=numbered "$HOME"/.oh-my-zsh/ "$HOME"/.dotfiles-backup/
 fi
 
 # Part 1: Get the oh my zsh things working
@@ -23,13 +23,13 @@ echo "    history substring search..."
 git clone -qq https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 
 # Part 2: Get the .dotfiles bare repo in place
-if [ -d "$HOME/.dotfiles" ]; then
+if [ -d "$HOME"/.dotfiles ]; then
     echo "Backing up .dotfiles folder."
-    mv --backup=numbered "$HOME/.dotfiles" "$HOME/.dotfiles-backup"
+    mv --backup=numbered "$HOME"/.dotfiles "$HOME"/.dotfiles-backup
 fi
-git clone -qq --bare https://github.com/Syzygianinfern0/dotfiles.git "$HOME/.dotfiles"
+git clone -qq --bare https://github.com/Syzygianinfern0/dotfiles.git "$HOME"/.dotfiles
 function config {
-    /usr/bin/git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
+    /usr/bin/git --git-dir="$HOME"/.dotfiles --work-tree="$HOME" "$@"
 }
 
 # Part 3: Getting the actual dot files in place and backing-up already existing files
