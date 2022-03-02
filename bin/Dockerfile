@@ -1,5 +1,7 @@
 FROM ubuntu
 
+ENV TERM xterm-256color
+
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update && \
     apt-get -yqq install \
