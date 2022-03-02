@@ -1,0 +1,26 @@
+# Source this in ~/.zshrc
+
+# Aliases
+alias dimmmer="xrandr --output HDMI-0 --brightness"
+alias ca="conda activate"
+alias jl="jupyter-lab"
+alias tb="tensorboard --logdir"
+alias gusage="watch -n 0.5 -c /home/catling/miniconda3/bin/nvidia-htop.py -l -c"
+alias gp="git push"
+alias fanmode="cat /sys/devices/platform/asus-nb-wmi/throttle_thermal_policy"
+alias ujgp="~/bin/update_joplin_bkps.sh"
+alias sizes="find . -type f -exec du -hs {} + | sort -rh | less"
+alias tn="tmux new -s"
+alias ta="tmux a -t"
+alias sizes="du -sh -- *"
+alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+function lss() {
+    find . -mindepth 1 -type d -exec sh -c 'echo "{} : $(find "{}" -type f | wc -l)" file\(s\)' \;
+}
+
+# Scripts and Sources
+# ca symtcp
+
+# Keybindings
+bindkey '^H' backward-kill-word
