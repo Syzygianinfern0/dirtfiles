@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Part 0: Back up oh my zsh stuff so it doesnt complain
-mkdir -p .dotfiles-backup
-if [ -d .oh-my-zsh ]; then
+mkdir -p $HOME/.dotfiles-backup
+if [ -d $HOME/.oh-my-zsh ]; then
   echo "Backing up oh my zsh folder."
-  mv .oh-my-zsh/ .dotfiles-backup/
+  mv $HOME/.oh-my-zsh/ $HOME/.dotfiles-backup/
 fi
 
 # Part 1: Get the oh my zsh things working
@@ -16,9 +16,9 @@ git clone -qq https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUS
 git clone -qq https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 
 # Part 2: Get the dotfiles in place
-if [ -d .dotfiles ]; then
+if [ -d $HOME/.dotfiles ]; then
   echo "Backing up .dotfiles folder."
-  mv .dotfiles .dotfiles-backup
+  mv $HOME/.dotfiles $HOME/.dotfiles-backup
 fi
 git clone -qq --bare https://github.com/Syzygianinfern0/dotfiles.git $HOME/.dotfiles
 function config {
@@ -29,7 +29,7 @@ if [ $? = 0 ]; then
   echo "Checked out config.";
   else
     echo "Backing up pre-existing dot files.";
-    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
+    config checkout 2>&1 | egrep "^\s+" | xargs -I '{}' mv {} .dotfiles-backup/{}
 fi;
 config checkout
 config config status.showUntrackedFiles no
