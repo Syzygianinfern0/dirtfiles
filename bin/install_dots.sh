@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# Part 0: Back up oh my zsh stuff so it doesnt complain
+# Part 0: Back up oh my zsh stuff so it doesn't complain
 mkdir -p "$HOME/.dotfiles-backup"
 if [ -d "$HOME/.oh-my-zsh" ]; then
     echo "Backing up existing oh my zsh folder."
@@ -22,7 +22,7 @@ git clone -qq https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CU
 echo "    history substring search..."
 git clone -qq https://github.com/zsh-users/zsh-history-substring-search "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search"
 
-# Part 2: Get the dotfiles in place
+# Part 2: Get the .dotfiles bare repo in place
 if [ -d "$HOME/.dotfiles" ]; then
     echo "Backing up .dotfiles folder."
     mv --backup=numbered "$HOME/.dotfiles" "$HOME/.dotfiles-backup"
@@ -32,6 +32,7 @@ function config {
     /usr/bin/git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
 }
 
+# Part 3: Getting the actual dot files in place and backing-up already existing files
 if config checkout &> /dev/null ; then
     echo "Checked out config."
 else
