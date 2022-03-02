@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eufo pipefail
+# set -eufo pipefail
 
 # Part 1: Get the oh my zsh things working
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -15,7 +15,6 @@ function config {
   /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
 }
 mkdir -p .dotfiles-backup
-mv $HOME/.zshrc .dotfiles-backup/
 config checkout
 if [ $? = 0 ]; then
   echo "Checked out config.";
