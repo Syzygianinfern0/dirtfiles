@@ -29,7 +29,13 @@ if [ $? = 0 ]; then
   echo "Checked out config.";
   else
     echo "Backing up pre-existing dot files.";
-    config checkout 2>&1 | egrep "^\s+" | xargs -I '{}' mv {} .dotfiles-backup/{}
+    function mvp () {
+      source="$1"
+      target="$2"
+      target_dir="$(dirname "$target")"
+      mkdir --parents $target_dir; mv $source $target
+    }
+    config checkout 2>&1 | egrep "^\s+" | xargs -I '{}' mvp {} .dotfiles-backup/{}
 fi;
 config checkout
 config config status.showUntrackedFiles no
