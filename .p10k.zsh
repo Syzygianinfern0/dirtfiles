@@ -89,7 +89,7 @@
     vim_shell               # vim shell indicator (:sh)
     midnight_commander      # midnight commander shell (https://midnight-commander.org/)
     nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
-    vpn_ip                # virtual private network indicator
+    vpn_ip                  # virtual private network indicator
     # load                  # CPU load
     # disk_usage            # disk usage
     # ram                   # free RAM
@@ -100,7 +100,7 @@
     time                    # current time
     # =========================[ Line #2 ]=========================
     newline
-    ip                    # ip address and bandwidth usage for a specified network interface
+    ip                      # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
     # battery               # internal battery
@@ -1431,7 +1431,7 @@
   typeset -g POWERLEVEL9K_IP_CONTENT_EXPANSION='$P9K_IP_IP${P9K_IP_RX_RATE:+ %70F⇣$P9K_IP_RX_RATE}${P9K_IP_TX_RATE:+ %215F⇡$P9K_IP_TX_RATE}'
   # Show information for the first network interface whose name matches this regular expression.
   # Run `ifconfig` or `ip -4 a show` to see the names of all network interfaces.
-  typeset -g POWERLEVEL9K_IP_INTERFACE='w.*'
+  typeset -g POWERLEVEL9K_IP_INTERFACE='[ew].*'
   # Custom icon.
   # typeset -g POWERLEVEL9K_IP_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
