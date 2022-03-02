@@ -35,7 +35,7 @@ if [ $? = 0 ]; then
       target_dir="$(dirname "$target")"
       mkdir --parents $target_dir; mv $source $target
     }
-    config checkout 2>&1 | egrep "^\s+" | xargs -I '{}' mvp {} .dotfiles-backup/{}
+    config checkout 2>&1 | egrep "^\s+" | xargs -I '{}' mvp $HOME/{} $HOME/.dotfiles-backup/{}
 fi;
 config checkout
 config config status.showUntrackedFiles no
