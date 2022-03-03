@@ -20,7 +20,7 @@ function lss() {
 }
 
 # Scripts and Sources
-# ca symtcp
+ca base
 
 # Keybindings
 bindkey '^H' backward-kill-word
