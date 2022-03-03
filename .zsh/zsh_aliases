@@ -20,7 +20,7 @@ function lss() {
 }
 
 # Scripts and Sources
-ca base
+# ca base
 
 # Keybindings
 bindkey '^H' backward-kill-word
