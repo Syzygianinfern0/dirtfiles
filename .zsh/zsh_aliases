@@ -12,6 +12,7 @@ alias ujgp="~/bin/update_joplin_bkps.sh"
 alias sizes="find . -type f -exec du -hs {} + | sort -rh | less"
 alias tn="tmux new -s"
 alias ta="tmux a -t"
+alias tl="tmux ls"
 alias sizes="du -sh -- *"
 alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
