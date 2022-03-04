@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rclone copy -P "$1" share-dump:"$1"
+rclone link share-dump:"$1"
