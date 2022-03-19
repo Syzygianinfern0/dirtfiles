@@ -15,6 +15,7 @@ alias ta="tmux a -t"
 alias tl="tmux ls"
 alias sizes="du -sh -- *"
 alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias conda="mamba"
 
 function lss() {
     find . -mindepth 1 -type d -exec sh -c 'echo "{} : $(find "{}" -type f | wc -l)" file\(s\)' \;
