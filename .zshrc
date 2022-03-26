@@ -144,5 +144,5 @@ fi
 
 # Aliases here
 source ~/.zsh/zsh_aliases
-export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/platform-tools"
 # export PYTHONPATH="/usr/lib/python3/dist-packages:$PYTHONPATH"
