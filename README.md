@@ -17,7 +17,7 @@ Its not headless ig. Most things are are super rough rn and not to be used just 
 ## Todo
 
 - [ ] Basics
-    - [ ] BSPWM
+    - [x] BSPWM
     - [ ] SXHKD
     - [ ] Polybar
     - [ ] Rofi
@@ -31,6 +31,8 @@ Its not headless ig. Most things are are super rough rn and not to be used just 
 - [ ] screensaver
 - [ ] touchpad gestures: touchegg
 - [ ] ksuperkey
+- [ ] Double borders
+- [ ] Check out bin folders of reference dotfiles
 
 ## Packages to install
 
@@ -47,3 +49,4 @@ flameshot: https://github.com/flameshot-org/flameshot/releases/download/v11.0.0/
 - jgmenu
 - libnotify-bin
 - xfce4-power-manager
+- https://github.com/hanschen/ksuperkey
