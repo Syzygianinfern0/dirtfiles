@@ -1,0 +1,109 @@
+#! /bin/sh
+
+## Environtment
+export PATH="${PATH}:$HOME/.config/bspwm/bin"
+
+## Java Applications
+wmname LG3D
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# ## Get colors from .Xresources -------------------------------#
+# xrdb ~/.Xresources
+# getcolors() {
+# 	FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
+# 	BACKGROUND=$(xrdb -query | grep 'background:'| awk '{print $NF}')
+# 	BLACK=$(xrdb -query | grep 'color0:'| awk '{print $NF}')
+# 	RED=$(xrdb -query | grep 'color1:'| awk '{print $NF}')
+# 	GREEN=$(xrdb -query | grep 'color2:'| awk '{print $NF}')
+# 	YELLOW=$(xrdb -query | grep 'color3:'| awk '{print $NF}')
+# 	BLUE=$(xrdb -query | grep 'color4:'| awk '{print $NF}')
+# 	MAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
+# 	CYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
+# 	WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
+# }
+# getcolors
+
+## Workspace Configurations --------------------------------------------#
+workspaces() {
+	name=1
+	for monitor in `bspc query -M`; do
+		bspc monitor ${monitor} -n "$name" -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
+		# bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' '' '' ''
+		let name++
+	done
+}
+workspaces
+
+## Set wallpaper
+"$HOME"/.config/bspwm/fehbg
+
+# Launching polybar
+"$HOME"/.config/bspwm/polybar/launch.sh
+
+killall -9 sxhkd dunst xfce4-power-manager picom flameshot jgmenu plank touchegg
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+
+
+dunst &
+xfce4-power-manager &
+# while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
+# picom --config "$HOME"/.config/bspwm/picom.conf &
+flameshot &
+
+bspc config border_width             4
+bspc config window_gap               10
+bspc config split_ratio              0.50
+
+bspc config borderless_monocle       true
+bspc config gapless_monocle          true
+bspc config single_monocle           false
+bspc config focus_follows_pointer    true
+
+bspc config pointer_modifier         mod1
+bspc config pointer_action1          move
+bspc config pointer_action2          resize_corner
+
+xsetroot -cursor_name left_ptr
+
+# Get the app names from `$ xprop | grep WM_CLASS`
+# Workspace 1 (Browser)
+declare -a browser=(google-chrome firefox)
+for i in ${browser[@]}; do
+    bspc rule -a $i desktop='^1' follow=on focus=on; done
+
+# Workspace 2 (IDE)
+declare -a ide=(code Code)
+for i in "${ide[@]}"; do
+    bspc rule -a $i desktop='^2' follow=on focus=on; done
+
+# # Workspace 3 (Files)
+# declare -a filem=(Thunar Pcmanfm qBittorrent)
+# for i in "${filem[@]}"; do
+#     bspc rule -a $i desktop='^3' follow=on focus=on; done
+
+# # Workspace 4 (Text Editor)
+# declare -a office=(Code Geany Blender)
+# for i in "${office[@]}"; do
+#     bspc rule -a $i desktop='^4' follow=on focus=on; done
+
+# # Workspace 5 (Media)
+# declare -a media=(vlc obs SimpleScreenRecorder mpv mplayer \
+# lxmusic Gimp Gimp-2.10 "VirtualBox Manager")
+# for i in "${media[@]}"; do
+#     bspc rule -a $i desktop='^5' follow=on focus=on; done
+
+# # Workspace 7 (Settings)
+# declare -a settings=(GParted Lxappearance Lxtask Lxrandr Arandr \
+# Xfce4-settings-manager Xfce4-power-manager-settings \
+# octopi)
+# for i in "${settings[@]}"; do
+#     bspc rule -a $i desktop='^7' follow=on focus=on; done
+
+# # floating windows
+# declare -a floats=(Alafloat Lxappearance Arandr \
+# Viewnior Pcmanfm feh Nm-connection-editor Matplotlib \
+# Yad ColorPicker Gnome-disks PeekSimpleScreenRecorder \
+# Pavucontrol Font-manager)
+# for i in "${floats[@]}"; do
+#     bspc rule -a $i manage=on state=floating follow=on focus=on centre=true; done
