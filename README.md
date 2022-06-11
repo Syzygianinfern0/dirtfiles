@@ -32,6 +32,10 @@ Its not headless ig. Most things are are super rough rn and not to be used just 
 - [ ] touchpad gestures: touchegg
 - [ ] ksuperkey
 - [ ] Double borders
+- [ ] Lockscreen
+- [ ] Screenshot
+- [ ] Emoji
+- [ ] Color picker
 - [ ] Check out bin folders of reference dotfiles
 
 ## Packages to install
