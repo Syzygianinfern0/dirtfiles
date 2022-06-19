@@ -37,3 +37,5 @@ flameshot &
 
 ## Misc
 xsetroot -cursor_name left_ptr
+wmname LG3D
+export _JAVA_AWT_WM_NONREPARENTING=1

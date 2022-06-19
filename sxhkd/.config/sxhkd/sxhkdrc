@@ -120,8 +120,8 @@ super + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # rotate a window
-super + e
-    bspc node @/ -R 90
+super + {_,shift + }e
+	bspc node '@parent' -R {_,-}90
 
 # ############################################
 # #                Focus                     #
