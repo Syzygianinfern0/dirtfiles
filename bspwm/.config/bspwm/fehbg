@@ -1,2 +1,2 @@
 #!/bin/bash
-feh --no-fehbg --bg-fill --randomize "$HOME/Pictures/wallpapers/misc/"
+feh --no-fehbg --bg-fill --randomize "$HOME/Pictures/wallpapers-rand/wallpapers/light"
