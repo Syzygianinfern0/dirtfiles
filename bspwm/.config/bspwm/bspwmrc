@@ -27,9 +27,10 @@ rule vlc desktop=^3 follow=on focus=on
 # TODO: Check out archcraft-bspwm for more rules
 
 ## Launching Apps
-killall -9 sxhkd dunst flameshot
+killall -9 sxhkd dunst picom flameshot polybar
 sxhkd &
 dunst &
+picom &
 flameshot &
 "$HOME"/.config/bspwm/fehbg
 "$HOME"/.config/polybar/launch.sh
