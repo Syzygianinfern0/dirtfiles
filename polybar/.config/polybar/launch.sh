@@ -30,18 +30,22 @@ set_values() {
 
 ## Launch Polybar with selected style
 launch_bar() {
-    if [[ -z "$CARD" ]]; then
-        sed -i -e 's/backlight/bna/g' "$DIR"/config.ini
-    elif [[ "$CARD" != *"intel_"* ]]; then
-        sed -i -e 's/backlight/brightness/g' "$DIR"/config.ini
-    fi
-
-    if [[ "$INTERFACE" == e* ]]; then
-        sed -i -e 's/network/ethernet/g' "$DIR"/config.ini
-    fi
+    #    if [[ -z "$CARD" ]]; then
+    #        sed -i -e 's/backlight/bna/g' "$DIR"/config.ini
+    #    elif [[ "$CARD" != *"intel_"* ]]; then
+    #        sed -i -e 's/backlight/brightness/g' "$DIR"/config.ini
+    #    fi
+    #
+    #    if [[ "$INTERFACE" == e* ]]; then
+    #        sed -i -e 's/network/ethernet/g' "$DIR"/config.ini
+    #    fi
 
     if [[ ! $(pidof polybar) ]]; then
-        polybar -q bar -c "$DIR"/config.ini &
+#        polybar -q bar -c "$DIR"/config.ini &
+        polybar -q bar-left -c "$DIR"/config.ini &
+        polybar -q bar-center -c "$DIR"/config.ini &
+        polybar -q bar-right -c "$DIR"/config.ini &
+        polybar -q bar-power -c "$DIR"/config.ini &
     else
         polybar-msg cmd restart
     fi
