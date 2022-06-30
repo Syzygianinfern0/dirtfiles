@@ -25,6 +25,8 @@ super + a
 # screenshot
 # emoji
 # toggle polybar
+super + b
+    {polybar-msg cmd hide; bspc config -m focused top_padding 0, polybar-msg cmd show; bspc config -m focused top_padding 40}
 
 # ##############################################################################
 # #                                 SYSTEM KEYS                                #
@@ -103,9 +105,9 @@ super + shift + {1-9,0}
 super + y
     bspc node newest.marked.local -n newest.!automatic.local
 
-# swap the current node and the biggest window
-super + g
-    bspc node -s biggest.window
+# # swap the current node and the biggest window
+# super + g
+#     bspc node -s biggest.window
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
@@ -130,9 +132,9 @@ super + {_,shift + }e
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
 
-# focus the next/previous window in the current desktop
-super + {_,shift + }c
-    bspc node -f {next,prev}.local.!hidden.window
+# # focus the next/previous window in the current desktop
+# super + {_,shift + }c
+#     bspc node -f {next,prev}.local.!hidden.window
 
 # focus to the given desktop
 super + {1-9,0}
@@ -146,8 +148,8 @@ super + bracket{left,right}
 super + {grave,Tab}
     bspc {node,desktop} -f last
 
-# focus the older or newer node in the focus history
-super + {o,i}
-    bspc wm -h off; \
-    bspc node {older,newer} -f; \
-    bspc wm -h on
+# # focus the older or newer node in the focus history
+# super + {o,i}
+#     bspc wm -h off; \
+#     bspc node {older,newer} -f; \
+#     bspc wm -h on
