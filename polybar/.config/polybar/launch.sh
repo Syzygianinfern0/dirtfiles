@@ -41,11 +41,23 @@ launch_bar() {
     #    fi
 
     if [[ ! $(pidof polybar) ]]; then
-#        polybar -q bar -c "$DIR"/config.ini &
-        polybar -q bar-left -c "$DIR"/config.ini &
-        polybar -q bar-center -c "$DIR"/config.ini &
-        polybar -q bar-right -c "$DIR"/config.ini &
-        polybar -q bar-power -c "$DIR"/config.ini &
+        # Alpha bar
+        # polybar -q bar-left -c "$DIR"/alpha/config.ini &
+        # polybar -q bar-center -c "$DIR"/alpha/config.ini &
+        # polybar -q bar-right -c "$DIR"/alpha/config.ini &
+        # polybar -q bar-power -c "$DIR"/alpha/config.ini &
+
+        # Beta bar
+        polybar -q spotify -c "$DIR"/beta/config.ini &
+        polybar -q weather -c "$DIR"/beta/config.ini &
+        polybar -q updates -c "$DIR"/beta/config.ini &
+        polybar -q bspwm -c "$DIR"/beta/config.ini &
+        polybar -q time -c "$DIR"/beta/config.ini &
+        polybar -q memory -c "$DIR"/beta/config.ini &
+        polybar -q cpu -c "$DIR"/beta/config.ini &
+        polybar -q pulseaudio -c "$DIR"/beta/config.ini &
+        polybar -q date -c "$DIR"/beta/config.ini &
+
     else
         polybar-msg cmd restart
     fi
