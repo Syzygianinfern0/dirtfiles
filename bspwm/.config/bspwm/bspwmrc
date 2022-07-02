@@ -35,7 +35,7 @@ rule vlc desktop=^3 follow=on focus=on
 killall -9 sxhkd dunst picom flameshot polybar
 sxhkd &
 dunst &
-picom &
+picom --experimental-backends &
 flameshot &
 "$HOME"/.config/polybar/launch.sh
 "$HOME"/.config/bspwm/fehbg
