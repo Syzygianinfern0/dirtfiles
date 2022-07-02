@@ -52,7 +52,6 @@ launch_bar() {
         polybar -q weather -c "$DIR"/beta/config.ini &
         polybar -q updates -c "$DIR"/beta/config.ini &
         polybar -q bspwm -c "$DIR"/beta/config.ini &
-        polybar -q time -c "$DIR"/beta/config.ini &
         polybar -q memory -c "$DIR"/beta/config.ini &
         polybar -q cpu -c "$DIR"/beta/config.ini &
         polybar -q pulseaudio -c "$DIR"/beta/config.ini &
