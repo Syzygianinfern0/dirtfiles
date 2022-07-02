@@ -12,7 +12,7 @@ is gonna stow all the configs I need for a server/tty which basically include
 
 ### Everything else
 
-Its not headless ig. Most things are are super rough rn and not to be used just like that.
+Its not headless ig. Most things are super rough rn and not to be used just like that.
 
 ## Todo
 
