@@ -18,8 +18,8 @@ Its not headless ig. Most things are are super rough rn and not to be used just 
 
 - [ ] Basics
     - [x] BSPWM
-    - [ ] SXHKD
-    - [ ] Polybar
+    - [x] SXHKD
+    - [x] Polybar
     - [ ] Rofi
     - [ ] Dunst
     - [ ] Terminal
@@ -54,3 +54,5 @@ flameshot: https://github.com/flameshot-org/flameshot/releases/download/v11.0.0/
 - libnotify-bin
 - xfce4-power-manager
 - https://github.com/hanschen/ksuperkey
+- jq
+- playerctl
