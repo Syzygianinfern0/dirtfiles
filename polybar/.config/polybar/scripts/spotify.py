@@ -89,6 +89,10 @@ try:
 
     artist = fix_string(metadata["xesam:artist"][0]) if metadata["xesam:artist"] else ""
     song = fix_string(metadata["xesam:title"]) if metadata["xesam:title"] else ""
+    try:
+        song = song[:song.index("(") - 1]
+    except:
+        pass
     # song = metadata['xesam:title']
     album = fix_string(metadata["xesam:album"]) if metadata["xesam:album"] else ""
 
