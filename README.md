@@ -56,3 +56,7 @@ flameshot: https://github.com/flameshot-org/flameshot/releases/download/v11.0.0/
 - https://github.com/hanschen/ksuperkey
 - jq
 - playerctl
+
+```shell
+sudo apt install stow bspwm sxhkd dunst polybar rofi nitrogen libnotify-bin
+```
