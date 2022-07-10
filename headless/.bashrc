@@ -117,3 +117,6 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=$PATH:~/bin:~/.local/bin
+
+alias apt='nala'
+alias sudo='sudo '
