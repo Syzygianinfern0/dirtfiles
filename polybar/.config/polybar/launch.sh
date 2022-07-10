@@ -60,14 +60,16 @@ launch_bar() {
         # Gamma bar (top padding 70)
         polybar -q bspwm -c "$DIR"/gamma/config.ini &
         polybar -q network -c "$DIR"/gamma/config.ini &
+        polybar -q network-speed -c "$DIR"/gamma/config.ini &
         polybar -q pulseaudio -c "$DIR"/gamma/config.ini &
         polybar -q date -c "$DIR"/gamma/config.ini &
         polybar -q updates -c "$DIR"/gamma/config.ini &
         polybar -q spotify -c "$DIR"/gamma/config.ini &
         polybar -q weather -c "$DIR"/gamma/config.ini &
-        polybar -q memory -c "$DIR"/gamma/config.ini &
-        polybar -q cpu -c "$DIR"/gamma/config.ini &
-        polybar -q fanmode -c "$DIR"/gamma/config.ini &
+        polybar -q hardware-stats -c "$DIR"/gamma/config.ini &
+        # polybar -q memory -c "$DIR"/gamma/config.ini &
+        # polybar -q cpu -c "$DIR"/gamma/config.ini &
+        # polybar -q fanmode -c "$DIR"/gamma/config.ini &
 
     else
         polybar-msg cmd restart
