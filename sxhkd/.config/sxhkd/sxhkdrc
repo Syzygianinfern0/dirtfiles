@@ -5,6 +5,9 @@
 super + Return
     gnome-terminal
 
+super + e
+    nautilus
+
 # launch floating terminal
 super + shift + Return
     bspc rule -a \* -o state=floating && gnome-terminal

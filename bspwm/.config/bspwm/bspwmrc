@@ -14,7 +14,7 @@ config gapless_monocle true
 config single_monocle false
 config focus_follows_pointer true
 
-config pointer_modifier mod1 # mod4
+config pointer_modifier mod4
 config pointer_action1 move
 config pointer_action2 resize_corner
 
@@ -36,7 +36,8 @@ killall -9 sxhkd dunst picom flameshot polybar
 sxhkd &
 dunst &
 #"$HOME"/.local/src/picom-ibhagwan/build/src/picom --experimental-backends &
-picom --experimental-backends &
+#picom --experimental-backends &
+picom &
 flameshot &
 "$HOME"/.config/polybar/launch.sh
 #"$HOME"/.config/bspwm/fehbg
