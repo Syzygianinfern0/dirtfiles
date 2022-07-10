@@ -47,7 +47,7 @@ launch_bar() {
         # polybar -q bar-right -c "$DIR"/alpha/config.ini &
         # polybar -q bar-power -c "$DIR"/alpha/config.ini &
 
-        # Beta bar
+        # Beta bar (top padding 70)
         polybar -q spotify -c "$DIR"/beta/config.ini &
         polybar -q weather -c "$DIR"/beta/config.ini &
         polybar -q updates -c "$DIR"/beta/config.ini &
