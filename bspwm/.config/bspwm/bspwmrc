@@ -31,14 +31,15 @@ rule Pavucontrol state=floating
 # TODO: Check out archcraft-bspwm for more rules
 
 ## Launching Apps
-killall -9 sxhkd dunst picom flameshot polybar
+killall -9 sxhkd dunst picom flameshot polybar greenclip
 sxhkd &
 dunst &
 #"$HOME"/.local/src/picom-ibhagwan/build/src/picom --experimental-backends &
 #picom --experimental-backends &
+"$HOME"/.config/polybar/launch.sh
 picom &
 flameshot &
-"$HOME"/.config/polybar/launch.sh
+greenclip daemon &
 #"$HOME"/.config/bspwm/fehbg
 nitrogen --restore &
 #/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &

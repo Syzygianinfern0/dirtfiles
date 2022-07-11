@@ -24,6 +24,9 @@ super + d
 super + a
     rofi -show ssh
 
+super + c
+    rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
 # color picker
 # screenshot
 # emoji
