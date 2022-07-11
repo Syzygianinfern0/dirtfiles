@@ -32,6 +32,16 @@
 
 ```shell
 sudo usermod -a -G video catling
-sudo chgrp video /sys/class/backlight/amdgpu_bl0/brightness
-sudo chmod g+rw /sys/class/backlight/amdgpu_bl0/brightness
+
+sudo tee -a /etc/udev/rules.d/backlight.rules >/dev/null <<EOF
+RUN+="/bin/chgrp video /sys/class/backlight/amdgpu_bl0/brightness"
+RUN+="/bin/chmod g+w /sys/class/backlight/amdgpu_bl0/brightness"
+EOF
+
+# https://wiki.archlinux.org/title/Backlight#ACPI
+
+# ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl0", GROUP="video", MODE="0664"
+
+# sudo chgrp video /sys/class/backlight/amdgpu_bl0/brightness
+# sudo chmod g+rw /sys/class/backlight/amdgpu_bl0/brightness
 ```
