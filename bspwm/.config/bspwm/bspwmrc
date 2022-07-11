@@ -42,8 +42,8 @@ flameshot &
 greenclip daemon &
 #"$HOME"/.config/bspwm/fehbg
 nitrogen --restore &
-#/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 ## Misc
 xsetroot -cursor_name left_ptr

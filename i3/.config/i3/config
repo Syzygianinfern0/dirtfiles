@@ -190,3 +190,7 @@ bar {
     position top
     status_command ~/.local/src/bumblebee-status/bumblebee-status
 }
+
+exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id dunst
+for_window [class="^.*"] border pixel 4
