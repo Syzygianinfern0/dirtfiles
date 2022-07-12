@@ -36,8 +36,8 @@ sxhkd &
 dunst &
 # "$HOME"/.local/src/picom-ibhagwan/build/src/picom --experimental-backends &
 # picom --experimental-backends &
-# picom &
 "$HOME"/.config/polybar/launch.sh
+picom &
 flameshot &
 greenclip daemon &
 "$HOME"/.config/bspwm/borders &
