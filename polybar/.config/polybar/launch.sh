@@ -58,16 +58,20 @@ launch_bar() {
         # polybar -q date -c "$DIR"/beta/config.ini &
 
         # Gamma bar (top padding 70)
-        polybar -q bspwm -c "$DIR"/gamma/config.ini &
-        polybar -q network -c "$DIR"/gamma/config.ini &
-        polybar -q network-speed -c "$DIR"/gamma/config.ini &
-        polybar -q pulseaudio -c "$DIR"/gamma/config.ini &
-        polybar -q date -c "$DIR"/gamma/config.ini &
-        polybar -q updates -c "$DIR"/gamma/config.ini &
-        polybar -q spotify -c "$DIR"/gamma/config.ini &
-        polybar -q weather -c "$DIR"/gamma/config.ini &
-        # polybar -q battery -c "$DIR"/gamma/config.ini &
-        polybar -q hardware-stats -c "$DIR"/gamma/config.ini &
+        rm /tmp/first_bar
+        rm /tmp/second_bar
+        polybar -q bspwm -c "$DIR"/gamma/config.ini & echo $! >> /tmp/first_bar
+        polybar -q network -c "$DIR"/gamma/config.ini & echo $! >> /tmp/first_bar
+        polybar -q network-speed -c "$DIR"/gamma/config.ini & echo $! >> /tmp/first_bar
+        polybar -q pulseaudio -c "$DIR"/gamma/config.ini & echo $! >> /tmp/first_bar
+        polybar -q date -c "$DIR"/gamma/config.ini & echo $! >> /tmp/first_bar
+        polybar -q updates -c "$DIR"/gamma/config.ini & echo $! >> /tmp/first_bar
+        polybar -q spotify -c "$DIR"/gamma/config.ini & echo $! >> /tmp/first_bar
+        polybar -q weather -c "$DIR"/gamma/config.ini & echo $! >> /tmp/first_bar
+        polybar -q hardware-stats -c "$DIR"/gamma/config.ini & echo $! >> /tmp/first_bar
+        polybar -q battery -c "$DIR"/gamma/config.ini & echo $! >> /tmp/second_bar
+        sleep 1 # wait for above commands to complete running ig
+        "$HOME"/.config/polybar/gamma/cycle_bar.sh -1
 
         # Delta bar (top padding 45);
         # polybar -q right -c "$DIR"/delta/config.ini &
