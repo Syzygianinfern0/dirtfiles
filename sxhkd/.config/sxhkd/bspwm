@@ -1,61 +1,4 @@
 # ##############################################################################
-# #                                APPLICATIONS                                #
-# ##############################################################################
-# launch terminal
-super + Return
-    gnome-terminal
-
-super + e
-    nautilus
-
-# launch floating terminal
-super + shift + Return
-    bspc rule -a \* -o state=floating && gnome-terminal
-
-# ##############################################################################
-# #                                   HOTKEYS                                  #
-# ##############################################################################
-
-# application launcher
-super + d
-    rofi -show drun -modi drun # $HOME/.config/rofi/bin/launcher.sh
-
-# ssh config quick connect
-super + a
-    rofi -show ssh
-
-super + c
-    rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
-
-# color picker
-# screenshot
-# emoji
-# toggle polybar
-super + b
-    "$HOME"/.config/polybar/gamma/cycle_bar.sh {-0,-1,-2}
-# top padding = top gap + bar height + bottom gap
-
-# reload wallpaper
-super + alt + w
-    "$HOME"/.config/bspwm/fehbg
-
-# ##############################################################################
-# #                                 SYSTEM KEYS                                #
-# ##############################################################################
-# brightness control
-XF86MonBrightness{Up,Down}
-    brightnessctl s {+5%, 5%-}
-# brightness{ --inc, --dec}
-
-# volume control
-XF86Audio{RaiseVolume,LowerVolume,Mute}
-    pulsemixer {--change-volume +10, --change-volume -10, --toggle-mute}
-
-# music control
-XF86Audio{Next,Prev,Play,Stop}
-    mpc {next,prev,toggle,stop}
-
-# ##############################################################################
 # #                              RESTART SERVICES                              #
 # ##############################################################################
 # quit/restart bspwm
@@ -75,6 +18,15 @@ super + Escape
 # close and kill
 super + {_,shift + }w
     bspc node -{c,k}
+
+# toggle polybar
+super + b
+    "$HOME"/.config/polybar/gamma/cycle_bar.sh {-0,-1,-2}
+# top padding = top gap + bar height + bottom gap
+
+# launch floating terminal
+super + shift + Return
+    bspc rule -a \* -o state=floating && gnome-terminal
 
 # ############################################
 # #              Preselecting                #
