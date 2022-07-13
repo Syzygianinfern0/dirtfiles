@@ -31,12 +31,12 @@ rule Pavucontrol state=floating
 # TODO: Check out archcraft-bspwm for more rules
 
 ## Launching Apps
-killall -9 sxhkd dunst picom flameshot polybar greenclip borders
-sxhkd &
+killall -9 sxhkd dunst polybar picom flameshot greenclip borders
+sxhkd -c "$HOME"/.config/sxhkd/common "$HOME"/.config/sxhkd/bspwm &
 dunst &
+"$HOME"/.config/polybar/launch.sh
 # "$HOME"/.local/src/picom-ibhagwan/build/src/picom --experimental-backends &
 # picom --experimental-backends &
-"$HOME"/.config/polybar/launch.sh
 picom &
 flameshot &
 greenclip daemon &
