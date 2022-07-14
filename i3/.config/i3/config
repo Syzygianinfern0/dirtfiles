@@ -20,6 +20,20 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# Rules TODO: Fix the classes
+assign [class="Google-chrome"] $ws1
+assign [class="jetbrains-pycharm"] $ws2
+assign [class="Code"] $ws2
+for_window [class="Spotify"] move container to workspace $ws4
+assign [class="calendar"] $ws5
+assign [class="todoist"] $ws5
+assign [class="slack"] $ws6
+assign [class="joplin"] $ws6
+assign [class="whatsapp"] $ws7
+assign [class="telegram"] $ws7
+assign [class="discord"] $ws8
+assign [class="qbittorrent"] $ws8
+
 # Theme
 include $HOME/.config/i3/theme.conf
 

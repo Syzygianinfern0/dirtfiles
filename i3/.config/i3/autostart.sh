@@ -7,7 +7,7 @@ flameshot &
 # "$HOME"/.config/polybar/launch.sh
 picom &
 greenclip daemon &
-# autotiling &
+autotiling &
 nm-applet &
 
 nitrogen --restore &
