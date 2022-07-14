@@ -5,7 +5,7 @@ sxhkd -c "$HOME"/.config/sxhkd/common "$HOME"/.config/sxhkd/i3 &
 dunst &
 flameshot &
 # "$HOME"/.config/polybar/launch.sh
-# picom &
+picom &
 greenclip daemon &
 # autotiling &
 nm-applet &

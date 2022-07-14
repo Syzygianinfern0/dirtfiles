@@ -5,7 +5,8 @@ font pango:monospace 12
 
 # Rules
 for_window [class="^.*"] border pixel 3
-gaps inner 8
+gaps inner 10
+# gaps top 60
 
 # Workspaces
 set $ws1 "1"
@@ -26,7 +27,6 @@ include $HOME/.config/i3/theme.conf
 exec_always --no-startup-id ~/.config/i3/autostart.sh
 bar {
     font pango:JetBrains Mono 12
-#    mode hide
     position top
     status_command ~/.local/src/bumblebee-status/bumblebee-status
     colors {
