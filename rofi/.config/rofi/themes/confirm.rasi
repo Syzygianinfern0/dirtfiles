@@ -1,3 +1,6 @@
+/* Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com> */
+/* Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 */
+
 @import "colors.rasi"
 
 * {
@@ -7,10 +10,10 @@
 }
 
 window {
-    width:      			230px;
-    padding:    			25px;
-    border:					0px;
-    border-radius:          0px;
+    width:      			220px;
+    padding:    			20px;
+    border:					2px;
+    border-radius:          8px;
     border-color:           @selected;
     location:               center;
     x-offset:               0;

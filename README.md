@@ -60,5 +60,5 @@ flameshot: https://github.com/flameshot-org/flameshot/releases/download/v11.0.0/
 ```shell
 sudo apt install stow bspwm sxhkd dunst polybar rofi nitrogen libnotify-bin \
     qbittorrent vlc mpv lxappearance jq playerctl picom neofetch pavucontrol \
-    pulsemixer brightnessctl htop iw thunar
+    pulsemixer brightnessctl htop iw thunar maim viewnior
 ```

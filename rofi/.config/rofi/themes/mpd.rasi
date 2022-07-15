@@ -19,7 +19,7 @@ window {
     border:                  		0px;
     border-color:                  	@selected;
     border-radius:                  12px;
-    width:                          450px;
+    width:                          550px;
     location:                       center;
     anchor:                         center;
     x-offset:                       0;
@@ -39,7 +39,7 @@ prompt {
 
 textbox-prompt-colon {
 	expand: 						false;
-	str: 							"";
+	str: 							"ﱘ";
     border-radius:                  10px;
     background-color:               @highlight;
     text-color:                     @background;
@@ -81,7 +81,7 @@ case-indicator {
 
 listview {
     background-color:               @background;
-    columns:                        5;
+    columns:                        6;
     lines:							1;
     spacing:                        10px;
     cycle:                          true;
