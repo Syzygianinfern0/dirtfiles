@@ -39,15 +39,32 @@ include $HOME/.config/i3/theme.conf
 
 # Apps
 exec_always --no-startup-id ~/.config/i3/autostart.sh
+
+# Status bars
 bar {
-    font pango:JetBrains Mono 12
+    id bar-main
+    font pango:JetBrains Mono 10
     position top
     status_command ~/.local/src/bumblebee-status/bumblebee-status
     i3bar_command i3bar -t
+    tray_output none
     colors {
-        background #18182500
+        background #181825
         focused_workspace #b4befe #313244 #cdd6f4
         inactive_workspace #181825 #1e1e2e #6c7086
         urgent_workspace #f5e0dc #f38ba8 #11111b
    }
+}
+bar {
+    id bar-systray
+    position bottom
+    tray_output primary
+    workspace_buttons no
+    mode hide
+    hidden_state hide
+    modifier Mod1
+    i3bar_command i3bar -t
+    colors {
+        background #00000000
+    }
 }

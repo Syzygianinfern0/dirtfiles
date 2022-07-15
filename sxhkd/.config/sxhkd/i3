@@ -23,7 +23,9 @@ super + w
 
 # toggle i3-status
 super + b
-    i3-msg bar mode {hide,dock}
+    i3-msg bar mode {hide,dock; i3-msg reload}
+    # the reload is a hacky way to disable the systray bar which is always
+    # supposed to be on auto-hide
 
 # ##############################################################################
 # #                               PRESELECTING                                 #
